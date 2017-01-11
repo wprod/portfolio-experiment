@@ -1,0 +1,24 @@
+{
+  "name": "portfolio_2.0",
+  "authors": [
+    "wprod <witters.amand@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^5.0.0",
+    "jquery": "^3.1.1",
+    "scrollmagic": "^2.0.5",
+    "flexboxgrid": "^6.3.2",
+    "outdated-browser": "^1.1.3"
+  }
+}
