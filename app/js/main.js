@@ -1,5 +1,4 @@
 $('document').ready(function() {
-
     // ------------- trims ------------- //
     var ticking = false;
     var isFirefox = (/Firefox/i.test(navigator.userAgent));

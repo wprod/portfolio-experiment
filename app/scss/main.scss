@@ -27,8 +27,8 @@
         $mf-checkbox-gap: $mf-font-size * 2 !default;
         $mf-checkbox-top: 0 !default;
         $mf-radio-margin: $mf-font-size / -4 !default;
-        // Colors
-        $primary: #172331;
+        // Colors 
+        $primary: #57c7e1;
         $secondary: #f56462;
         $grey: #fffff3;
         $bg: #fffff3;
@@ -41,18 +41,17 @@
         // Animation
         $mf-transition-speed: 0.28s !default;
         //Font
-        $font-primary: PT Mono;
-        $font-secondary: Playfair Display;
+        $font-primary: Raleway;
+        $font-secondary: Ubuntu;
         html,
         body {
             overflow: hidden;
-            font-family: $font-primary;
+            font-family: $font-secondary;
             letter-spacing: -0.05rem;
         }
         
         p {
             position: inherit;
-            width: 100%;
             top: 0;
         }
         
@@ -180,14 +179,18 @@
             justify-content: flex-start;
             height: 85vh;
             text-align: left;
-            font-family: Playfair Display, sans-serif;
+            font-family: $font-primary, sans-serif;
             color: #172331;
             margin: 0;
             text-align: left;
             padding-top: 14vh;
             padding-left: 0;
             line-height: 15vh;
-            border-left: 1px solid $secondary;
+            .intro-title {
+                border-left: 1px solid $secondary;
+                padding-left: 1.5vw;
+            }
+            font-weight: bolder;
             p {
                 margin: 0;
                 font-size: 5vw;
@@ -197,9 +200,9 @@
             }
             p span {
                 padding: 0 1rem;
-                border-bottom: .1vw solid currentColor;
                 display: inline-block;
                 line-height: 1.22;
+                text-shadow: 0.5rem 0.5rem 2rem #a02c49;
             }
             p span:hover {
                 -webkit-text-fill-color: transparent;
@@ -208,6 +211,7 @@
                 -webkit-background-clip: text;
                 background-clip: text;
                 background-size: cover;
+                text-shadow: none;
             }
             //line 2 --
             h2 {
@@ -218,9 +222,9 @@
             }
             h2 span {
                 padding: 0 1rem;
-                border-bottom: .1vw solid currentColor;
                 display: inline-block;
                 line-height: 1.19;
+                text-shadow: 0.5rem 0.5rem 2rem #a02c49;
             }
             h2 span:hover {
                 -webkit-text-fill-color: transparent;
@@ -229,6 +233,7 @@
                 -webkit-background-clip: text;
                 background-clip: text;
                 background-size: cover;
+                text-shadow: none;
             }
             //line 3 -- 
             h1 {
@@ -239,9 +244,9 @@
             }
             h1 span {
                 padding: 0 1rem;
-                border-bottom: .1vw solid currentColor;
                 display: inline-block;
                 line-height: 1.19;
+                text-shadow: 0.5rem 0.5rem 2rem #a02c49;
             }
             h1 span:hover {
                 -webkit-text-fill-color: transparent;
@@ -250,6 +255,7 @@
                 -webkit-background-clip: text;
                 background-clip: text;
                 background-size: cover;
+                text-shadow: none;
             }
             svg {
                 height: 8em;
@@ -323,7 +329,7 @@
             -ms-transition: opacity .25s;
             transition: opacity .25s;
             display: block;
-            font-family: $font-secondary;
+            font-family: $font-primary;
         }
         
         span.big {
@@ -365,6 +371,11 @@
         }
         
         // ----- 3rd slide
+        #rocket {
+            position: absolute;
+            margin: 16vh 0 0 8vw;
+        }
+        
         .upRight {
             line-height: 2.5vh;
             color: $typo-dark;
@@ -708,15 +719,14 @@
             .logo {
                 height: 4rem;
                 margin: 3vh 1vw;
-                opacity: 0.7;
             }
             .navbar {
                 height: 6rem;
-                width: 80vw;
+                width: 84vw;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 0 10vw;
+                padding: 0 8vw;
             }
             .navbar-buttons {
                 position: relative;
@@ -876,16 +886,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.1);
         }
         
         .background:first-child {
-            background: #FFA17F;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #FFA17F, #00223E);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #FFA17F, #00223E);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-image: url(/dist/img/3.jpg);
             -webkit-transform: translateY(-15vh);
             transform: translateY(-15vh);
         }
@@ -896,16 +901,11 @@
         }
         
         .background:nth-child(2) {
-            background: #FFA17F;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #FFA17F, #00223E);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #FFA17F, #00223E);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-image: url(/dist/img/1.jpg);
         }
         
         .background:nth-child(3) {
-            background-image: url(/dist/img/3.jpeg);
+            background-image: url(/dist/img/2.jpg);
         }
         
         .background:nth-child(4) {
