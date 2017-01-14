@@ -116,7 +116,7 @@
             font-size: ($mf-font-size * 1.1);
             color: lighten($primary, 10%);
             margin: 1vh 0;
-            padding: .3rem .8rem;
+            padding: 1vh 1vw;
             cursor: pointer;
             transition: background-color $mf-transition-speed ease, color $mf-transition-speed ease, box-shadow $mf-transition-speed ease;
             overflow: hidden;
@@ -465,16 +465,6 @@
                     height: 30.5vh;
                     resize: none;
                 }
-                select {
-                    width: 100%;
-                    font-size: $mf-font-size;
-                    height: ($mf-font-size * 1.6);
-                    padding: $mf-spacer $mf-spacer ($mf-spacer / 2);
-                    background: none;
-                    border: none;
-                    line-height: 1.6;
-                    box-shadow: none;
-                }
                 .control-label {
                     position: absolute;
                     top: ($mf-font-size / 4);
@@ -557,132 +547,6 @@
                 }
             }
             // Radio & Checkbox
-            .checkbox,
-            .form-radio {
-                label {
-                    position: relative;
-                    cursor: pointer;
-                    padding-left: $mf-checkbox-gap;
-                    text-align: left;
-                    color: $mf-input-color;
-                    display: block;
-                }
-                input {
-                    width: auto;
-                    opacity: 0.00000001;
-                    position: absolute;
-                    left: 0;
-                }
-            }
-            .radio {
-                margin-bottom: $mf-font-size;
-                .helper {
-                    position: absolute;
-                    top: $mf-radio-margin;
-                    left: $mf-radio-margin;
-                    cursor: pointer;
-                    display: block;
-                    font-size: $mf-font-size;
-                    user-select: none;
-                    color: $mf-border-color;
-                    &::before,
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        margin: ($mf-spacer * 2);
-                        width: $mf-font-size;
-                        height: $mf-font-size;
-                        transition: transform $mf-transition-speed ease;
-                        border-radius: 50%;
-                        border: ($mf-font-size / 8) solid currentColor;
-                    }
-                    &::after {
-                        transform: scale(0);
-                        background-color: $primary;
-                        border-color: $primary;
-                    }
-                }
-                label:hover .helper {
-                    color: $primary;
-                }
-                // scss-lint:disable QualifyingElement, NestingDepth
-                input:checked {
-                    ~.helper {
-                        &::after {
-                            transform: scale(0.5);
-                        }
-                        &::before {
-                            color: $primary;
-                        }
-                    }
-                }
-            }
-            .checkbox {
-                // scss-lint:disable QualifyingElement
-                margin-top: ($mf-gap * 2);
-                margin-bottom: $mf-font-size;
-                .helper {
-                    color: $mf-border-color;
-                    position: absolute;
-                    top: $mf-checkbox-top;
-                    left: 0;
-                    width: $mf-font-size;
-                    height: $mf-font-size;
-                    z-index: 0;
-                    border: ($mf-font-size / 8) solid currentColor;
-                    border-radius: ($mf-font-size / 16);
-                    transition: border-color $mf-transition-speed ease;
-                    &::before,
-                    &::after {
-                        position: absolute;
-                        height: 0;
-                        width: ($mf-font-size * 0.2);
-                        background-color: $primary;
-                        display: block;
-                        transform-origin: left top;
-                        border-radius: ($mf-font-size / 4);
-                        content: '';
-                        transition: opacity $mf-transition-speed ease, height 0s linear $mf-transition-speed;
-                        opacity: 0;
-                    }
-                    &::before {
-                        top: ($mf-font-size * 0.65);
-                        left: ($mf-font-size * 0.38);
-                        transform: rotate(-135deg);
-                    }
-                    &::after {
-                        top: ($mf-font-size * 0.3);
-                        left: 0;
-                        transform: rotate(-45deg);
-                    }
-                }
-                label:hover .helper {
-                    color: $primary;
-                }
-                input:checked {
-                    ~.helper {
-                        color: $primary;
-                        &::after,
-                        &::before {
-                            opacity: 1;
-                            transition: height $mf-transition-speed ease;
-                        }
-                        &::after {
-                            height: ($mf-font-size / 2);
-                        }
-                        &::before {
-                            height: ($mf-font-size * 1.2);
-                            transition-delay: $mf-transition-speed;
-                        }
-                    }
-                }
-            }
-            .radio+.radio,
-            .checkbox+.checkbox {
-                margin-top: $mf-font-size;
-            }
             .has-error {
                 .legend.legend,
                 &.form-group .control-label.control-label {
@@ -709,6 +573,18 @@
         }
         
         // ---------- END SLIDES
+        // ---------- Portfolio
+        .fullpage {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: $bg;
+            transition: 1s;
+        }
+        
+        // ---------- END Portfolio
         // ------------------------------------- NAV
         .navContainer * {
             z-index: 999;
@@ -716,8 +592,9 @@
         
         .navContainer {
             position: absolute;
-            .logo {
-                height: 4rem;
+            #logo {
+                height: 3rem;
+                width: auto;
                 margin: 3vh 1vw;
             }
             .navbar {
@@ -777,7 +654,7 @@
             .overlay ul li a {
                 padding: 1rem;
                 display: block;
-                font-family: $font-secondary;
+                font-family: $font-primary;
                 position: relative;
                 color: #FFF;
                 text-decoration: none;
@@ -831,14 +708,19 @@
             button:focus {
                 outline: 0;
             }
+            .close-menu {
+                width: 2vw;
+                height: auto;
+            }
             .open-menu,
             .close-menu,
             .button {
                 cursor: pointer;
                 transition: transform 0.30s;
-                svg {
-                    fill: blue;
-                }
+                background: $primary;
+                padding: 1rem;
+                box-shadow: $shadow-3;
+                margin: 1rem;
             }
             .open-menu:hover,
             .close-menu:hover,
@@ -890,7 +772,7 @@
         }
         
         .background:first-child {
-            background-image: url(/dist/img/3.jpg);
+            background-image: url(../../dist/img/3.jpg);
             -webkit-transform: translateY(-15vh);
             transform: translateY(-15vh);
         }
@@ -901,19 +783,19 @@
         }
         
         .background:nth-child(2) {
-            background-image: url(/dist/img/1.jpg);
+            background-image: url(../../dist/img/1.jpg);
         }
         
         .background:nth-child(3) {
-            background-image: url(/dist/img/2.jpg);
+            background-image: url(../../dist/img/2.jpg);
         }
         
         .background:nth-child(4) {
-            background-image: url(/dist/img/4.jpg);
+            background-image: url(../../dist/img/4.jpg);
         }
         
         .background:nth-child(5) {
-            background-image: url(/dist/img/5.jpg);
+            background-image: url(../../dist/img/5.jpg);
         }
         
         .background:nth-child(1) {

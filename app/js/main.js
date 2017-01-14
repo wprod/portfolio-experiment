@@ -10,7 +10,7 @@ $('document').ready(function() {
 
 
 
-    // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
+    // ------------- DETERMINE LA DIRECTION DU SCROLL (en fction du nav) ------------- //
     function wheelScroll(evt) {
         if (isFirefox) {
             // Firefox
@@ -31,7 +31,7 @@ $('document').ready(function() {
             }
         }
     }
-
+    // compatibilité mobile
     function touchScroll(ts, te) {
         delta = te - ts;
         if (ticking != true) {
@@ -165,5 +165,18 @@ $('document').ready(function() {
     $('nav').on('click', function() {
         $('.overlay').removeClass('open');
     });
+
+    // ---------- Portfolio Anims --------//
+
+    $('.expender').on('click', function() {
+        if ($(this).hasClass('fullpage')) {
+            $(this).removeClass('fullpage');
+        } else {
+            $(this).addClass('fullpage');
+        }
+    });
+
+
+
 
 });
