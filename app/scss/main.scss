@@ -374,6 +374,8 @@
         #rocket {
             position: absolute;
             margin: 16vh 0 0 8vw;
+            top: 0;
+            left: 0;
         }
         
         .upRight {
@@ -574,14 +576,27 @@
         
         // ---------- END SLIDES
         // ---------- Portfolio
+        .portfolio-content {
+            display: none;
+            left: 100vw;
+        }
+        
+        .expender {}
+        
         .fullpage {
             position: absolute;
-            width: 100%;
+            padding: 25vh 10vw 0 10vw;
+            width: 80vw;
             height: 100%;
             top: 0;
             left: 0;
             background: $bg;
-            transition: 1s;
+            transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+            z-index: 333;
+        }
+        
+        .fullpage .portfolio-content {
+            display: block;
         }
         
         // ---------- END Portfolio
